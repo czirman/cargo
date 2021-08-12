@@ -10,8 +10,8 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties
 public class AppConfig {
 
-    @Value("${main.test}")
-    private  String test;
+   /* @Value("${main.test}")
+    private  String test;*/
 
     @Bean
     public TestServices testServices(){

@@ -1,18 +1,18 @@
-main:
-  test: test
-
-# H2 in memory configuration
 spring:
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/db.changelog.yaml
   datasource:
-    username: sa
-    password: sa
-    url: jdbc:h2:mem:testdb
-    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:cargo
+    driver-class-name: org.h2.Driver
+    data-username: sa
+    data-password:
 
-    jpa:
-      database-platform: org.hibernate.dialect.H2Dialect
+  jpa:
+    hibernate:
+      ddl-auto=create-drop: false
 
   h2:
     console:
       enabled: true
-      path: /unkno
+      path: /h2-console
