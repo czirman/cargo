@@ -1,0 +1,17 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Intelij
+.idea/
+out/
+.directory
+**/*.iml
+
+# Gradle
+**/.gradle/**
+**/build/**
+
+
