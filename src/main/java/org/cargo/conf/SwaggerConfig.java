@@ -1,4 +1,4 @@
-package org.czirman.conf;
+package org.cargo.conf;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
-    private final static String PATH_CONTROLLER = "org.czirman";
+    private final static String PATH_CONTROLLER = "org.cargo";
     //private final static String PATH_CONTROLLER = "org";
 
     @Bean

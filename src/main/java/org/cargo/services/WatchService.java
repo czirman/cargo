@@ -1,9 +1,9 @@
-package org.czirman.services;
+package org.cargo.services;
 
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class TestServices {
+public class WatchService {
 
     private final String testLombok;
 }

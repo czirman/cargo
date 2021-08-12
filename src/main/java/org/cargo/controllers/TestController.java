@@ -1,4 +1,4 @@
-package org.czirman.controllers;
+package org.cargo.controllers;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
