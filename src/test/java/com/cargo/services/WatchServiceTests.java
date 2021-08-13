@@ -13,6 +13,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -22,13 +23,9 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class WatchServiceTests {
 
-    /* @Mock
-     private WatchRepository watchRepository;*/
     @Mock
     private WatchRepository watchRepository;
 
-    /* @InjectMocks
-     WatchService watchService = new WatchService(watchRepository);*/
     @InjectMocks
     WatchService watchService = new WatchService(watchRepository);
 
@@ -51,17 +48,36 @@ public class WatchServiceTests {
         when(watchRepository.findByIdIn(any())).thenReturn(WatchesBuilderWrapper.withDiscountList());
 
         //when
-        Double actual = watchService.getValue(Arrays.asList(1, 2, 2));
+
+        //Double actual = watchService.getValue(Arrays.asList(1, 2, 2));
+        List<Integer> ids = Stream.of(1,2,2,2).collect(Collectors.toList());
+        Double actual = watchService.getValue(ids);
 
         //then
-        assertEquals(260, actual);
+        assertEquals(300, actual);
     }
+
+    @Test
+    void simple_test() {
+        int count = 2;
+        int getCount = 2;
+
+        int a = 1%2;
+        int b = 2%2;
+        int c = 3%2;
+
+        int d = 1/2;
+        int e = 2/2;
+        int f = 3/2;
+    }
+
 
     private static Stream<Arguments> provideListOfId() {
         return Stream.of(
-                Arguments.of(Arrays.asList(4,3,4)),
-                Arguments.of(Arrays.asList(1,2,3,4)),
-                Arguments.of(Arrays.asList(4,4,4,4,1,2,3))
+                Arguments.of(Arrays.asList(4, 3, 4))
+            /*Arguments.of(Arrays.asList(1,2,3,4)),
+            Arguments.of(Arrays.asList(4,4,4,4,1,2,3))*/
         );
     }
+
 }
