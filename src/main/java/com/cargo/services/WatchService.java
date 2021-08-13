@@ -4,7 +4,6 @@ import com.cargo.entity.Watches;
 import com.cargo.repositories.WatchRepository;
 import lombok.AllArgsConstructor;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -14,7 +13,7 @@ public class WatchService {
 
     private WatchRepository watchRepository;
 
-    public Double getValue(final Collection<Integer> ids) {
+    public Double getValue(final List<Integer> ids) {
         Double result = 0d;
         List<Watches> watchesList = watchRepository.findByIdIn(ids);
 
@@ -23,12 +22,8 @@ public class WatchService {
 
         double calculatedPrice = ids.stream()
                 .distinct()
-                .map(watchId -> watchCounts.get(watchId) * getValueById(watchesList, watchId))
+                //.map(watchId -> watchCounts.get(watchId) * getWatchById(watchesList, watchId))
                 .mapToDouble(watches -> watches.doubleValue())
-                .sum();
-
-        double noDiscount = watchesList.stream()
-                .mapToDouble(watches -> watches.getPrice())
                 .sum();
 
         result = calculatedPrice;
@@ -36,23 +31,29 @@ public class WatchService {
         return result;
     }
 
-    private Double getValueById(List<Watches> watches, Integer id) {
+    private Watches getWatchById(List<Watches> watches, Integer id) {
         return watches.stream().filter(watch -> watch.getId() == id)
-                .map(watch -> watch.getPrice()).findFirst().get();
+                .findFirst().get();
     }
 
-
-    private Boolean isDiscountForId(final Integer id, final List<Watches> watches) {
-        Boolean result = false;
-        long watchCount = watches.stream()
-                .filter(watchesArg -> watchesArg.getId() == id).count();
-        Watches checkedWatch = watches.get(id);
-        if (!checkedWatch.getDiscount().trim().isEmpty()) {
-            String[] array = checkedWatch.getDiscount().split("\\ ", -1);
+    private void calculatedDiscountedWatches(final List<Integer> ids, final List<Watches> watches) {
+        for (Integer id : ids) {
+            Watches watch = getWatchById(watches, id);
+            /*  if (isDiscountForId()){
+            }*/
         }
+    }
 
-/*        String[] array = values.split("\\|", -1);
-        checkedWatch.getDiscount().s*/
+    private Boolean isDiscountForId(final Map<Integer, Long> watchCounts, final Watches checkedWatch, final Integer id) {
+
+        Boolean result = false;
+        Long watchCount = watchCounts.get(id);
+
+        if (!checkedWatch.getDiscount().trim().isEmpty()) {
+
+            String[] discountInfo = checkedWatch.getDiscount().split("\\ ", -1);
+            return watchCount >= Long.valueOf(discountInfo[0]);
+        }
 
         return result;
     }

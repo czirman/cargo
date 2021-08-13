@@ -19,7 +19,7 @@ public class WatchesBuilderWrapper {
             .build();
     }
 
-    public static List<Watches> withDefaultList() {
+    public static List<Watches> withDiscountList() {
         return Arrays.asList(
             withDefaults(),
             withDefaults()
@@ -28,20 +28,6 @@ public class WatchesBuilderWrapper {
                 .name("Michael Kors")
                 .price(80d)
                 .discount("2 for 120")
-                .build(),
-            withDefaults()
-                .toBuilder()
-                .id(3)
-                .name("Swatch")
-                .price(50d)
-                .discount("")
-                .build(),
-            withDefaults()
-                .toBuilder()
-                .id(4)
-                .name("Casio")
-                .discount("")
-                .price(30d)
                 .build()
         );
     }
