@@ -1,6 +1,6 @@
-package org.czirman;
+package com.cargo;
 
-import org.czirman.conf.AppConfig;
+import com.cargo.config.AppConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

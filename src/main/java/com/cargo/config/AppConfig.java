@@ -1,7 +1,6 @@
-package org.czirman.conf;
+package com.cargo.config;
 
-import org.czirman.services.TestServices;
-import org.springframework.beans.factory.annotation.Value;
+import com.cargo.services.WatchService;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,11 +9,11 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties
 public class AppConfig {
 
-    @Value("${main.test}")
-    private  String test;
+   /* @Value("${main.test}")
+    private  String test;*/
 
     @Bean
-    public TestServices testServices(){
-        return new TestServices("testLombok");
+    public WatchService testServices(){
+        return new WatchService("testLombok");
     }
 }
