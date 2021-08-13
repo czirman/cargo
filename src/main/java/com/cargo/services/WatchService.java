@@ -1,9 +1,17 @@
 package com.cargo.services;
 
-import lombok.RequiredArgsConstructor;
+import com.cargo.repositories.WatchRepository;
+import lombok.AllArgsConstructor;
 
-@RequiredArgsConstructor
+import java.util.Collection;
+
+@AllArgsConstructor
 public class WatchService {
 
-    private final String testLombok;
+    private WatchRepository watchRepository;
+
+    public Integer getValue(Collection<Integer> ids){
+        watchRepository.findByIdIn(ids);
+        return 1;
+    }
 }

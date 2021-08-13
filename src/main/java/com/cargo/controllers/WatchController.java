@@ -30,7 +30,7 @@ public class WatchController {
         consumes = MediaType.APPLICATION_JSON_VALUE,
         produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Double> getWatch(@RequestBody final List<Integer> watchesIds) {
-        watchService.hashCode();
+        watchService.getValue(watchesIds);
         return ResponseEntity.status(HttpStatus.OK)
             .body(2.14);
     }
