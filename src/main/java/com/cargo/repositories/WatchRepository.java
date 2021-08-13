@@ -1,0 +1,15 @@
+package com.cargo.repositories;
+
+import com.cargo.entity.Watches;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Collection;
+import java.util.List;
+
+@Repository
+public interface WatchRepository extends JpaRepository<Watches, Integer> {
+
+    List<Watches> findByIdIn(Collection<Integer> ids);
+
+}
