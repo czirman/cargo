@@ -1,0 +1,61 @@
+
+
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: mkucman
+      changes:
+        - insert:
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: name
+                  value: Rolex
+              - column:
+                  name: price
+                  value: 100
+              - column:
+                  name: discount
+                  value: 3 for 200
+            tableName: watches
+        - insert:
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: name
+                  value: Michael Kors
+              - column:
+                  name: price
+                  value: 80
+              - column:
+                  name: discount
+                  value: 2 for 120
+            tableName: watches
+        - insert:
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: name
+                  value: Swatch
+              - column:
+                  name: price
+                  value: 50
+            tableName: watches
+        - insert:
+            columns:
+              - column:
+                  name: id
+                  value: 4
+              - column:
+                  name: name
+                  value: Casio
+              - column:
+                  name: price
+                  value: 30
+            tableName: watches

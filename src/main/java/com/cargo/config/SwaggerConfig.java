@@ -14,7 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
-    private final static String PATH_CONTROLLER = "org.cargo";
+    private final static String PATH_CONTROLLER = "com.cargo";
     //private final static String PATH_CONTROLLER = "org";
 
     @Bean
