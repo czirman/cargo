@@ -4,6 +4,8 @@ ext {
     swagger_annotations_version = "2.1.6"
     h2_version ="1.4.200"
     liquibase_version = "4.4.3"
+    jupiter_version = "5.7.2"
+    mockito_version = "3.11.2"
 }
 
 dependencies {
@@ -23,4 +25,10 @@ dependencies {
     implementation "io.swagger.core.v3:swagger-annotations:${swagger_annotations_version}"
     implementation "com.h2database:h2:${h2_version}"
     implementation "org.liquibase:liquibase-core:${liquibase_version}"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${jupiter_version}"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:${jupiter_version}"
+    testImplementation "org.mockito:mockito-junit-jupiter:${mockito_version}"
+
+
 }

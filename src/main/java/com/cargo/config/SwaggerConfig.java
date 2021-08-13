@@ -1,4 +1,4 @@
-package org.cargo.conf;
+package com.cargo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

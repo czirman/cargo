@@ -1,6 +1,6 @@
-package org.cargo.conf;
+package com.cargo.config;
 
-import org.cargo.services.WatchService;
+import com.cargo.services.WatchService;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package org.cargo.controllers;
+package com.cargo.controllers;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

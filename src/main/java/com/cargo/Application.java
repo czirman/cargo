@@ -1,6 +1,6 @@
-package org.cargo;
+package com.cargo;
 
-import org.cargo.conf.AppConfig;
+import com.cargo.config.AppConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

@@ -1,4 +1,4 @@
-package org.cargo.services;
+package com.cargo.services;
 
 import lombok.RequiredArgsConstructor;
 
