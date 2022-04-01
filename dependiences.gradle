@@ -1,11 +1,13 @@
 ext {
-    lombok_version = "1.18.16"
-    swagger_version = "2.8.0"
-    swagger_annotations_version = "2.1.6"
-    h2_version ="1.4.200"
-    liquibase_version = "4.4.3"
-    jupiter_version = "5.7.2"
-    mockito_version = "3.11.2"
+    lombok_version = "1.18.22"
+    /*swagger_version = "2.8.0"*/
+    /*swagger_annotations_version = "2.1.6"*/
+    swagger_version = "3.0.0"
+    swagger_annotations_version = "2.1.13"
+    h2_version ="2.1.210"
+    liquibase_version = "4.9.1"
+    jupiter_version = "5.8.2"
+    mockito_version = "4.4.0"
 }
 
 dependencies {
